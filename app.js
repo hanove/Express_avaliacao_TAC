@@ -12,7 +12,7 @@ require("dotenv").config();
 
 var app = express();
 
-mongoose.connect("mongodb+srv://hanove:qualquercoisaai@cluster0.7wtkhwe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(() => {
+mongoose.connect(process.env.MONGO_URL).then(() => {
   console.log("MongoDB conectado, Oba!!!");
 }).catch((err) => {
   console.log("MongoDB não conectado");
